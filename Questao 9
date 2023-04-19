@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int opcao, quantidade;
+    float valor_total = 0;
+    
+    while(1) {
+        printf("MENU:\n");
+        printf("1 => ABACAXI – 5,00 a unidade\n");
+        printf("2 => MAÇA – 1,00 a unidade\n");
+        printf("3 => PERA – 4,00 a unidade\n");
+        printf("4 => FINALIZAR \n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+        
+        if(opcao == 4) {
+            break;
+        }
+        
+        switch(opcao) {
+            case 1:
+                printf("Digite a quantidade de abacaxis desejada: ");
+                scanf("%d", &quantidade);
+                valor_total += quantidade * 5.0;
+                break;
+            case 2:
+                printf("Digite a quantidade de maças desejada: ");
+                scanf("%d", &quantidade);
+                valor_total += quantidade * 1.0;
+                break;
+            case 3:
+                printf("Digite a quantidade de peras desejada: ");
+                scanf("%d", &quantidade);
+                valor_total += quantidade * 4.0;
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+        
+        printf("\n");
+    }
+    
+    printf("Valor total da compra: R$%.2f\n", valor_total);
+    
+    return 0;
+}
